@@ -13,7 +13,11 @@ app.use(express.json());
 app.use(morgan("combined"));
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Todo Server");
+  res.json({
+    routes: {
+      todos: "localhost:8000/todos",
+    },
+  });
 });
 
 app.use("/todos", todoRouter);

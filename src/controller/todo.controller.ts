@@ -44,11 +44,3 @@ export const addTodo = async (
     next(error);
   }
 };
-
-export const updateTodo = (req: Request, res: Response) => {
-  res.sendStatus(204);
-};
-
-export const deleteTodo = (req: Request, res: Response) => {
-  res.json({ todos: [] });
-};
