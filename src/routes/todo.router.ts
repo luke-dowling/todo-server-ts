@@ -1,11 +1,21 @@
 import { Router } from "express";
-import { getTodos, addTodo, getTodo } from "../controller/todo.controller";
-import { validateTodo } from "../middleware/validation";
+import {
+  getTodos,
+  addTodo,
+  getTodo,
+  updateTodo,
+  deleteTodo,
+} from "../controller/todo.controller";
+import { validateAddTodo, validateUpdateTodo } from "../middleware/validation";
 
 const todoRouter = Router();
 
-todoRouter.route("/").get(getTodos).post(validateTodo, addTodo);
+todoRouter.route("/").get(getTodos).post(validateAddTodo, addTodo);
 
-todoRouter.route("/:id").get(getTodo);
+todoRouter
+  .route("/:id")
+  .get(getTodo)
+  .patch(validateUpdateTodo, updateTodo)
+  .delete(deleteTodo);
 
 export { todoRouter };

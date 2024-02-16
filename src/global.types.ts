@@ -2,4 +2,7 @@ interface IError extends Error {
   status?: number;
 }
 
-interface ITodo {}
+interface ITodo {
+  text: String;
+  completed: Boolean;
+}
