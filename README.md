@@ -82,8 +82,7 @@ The server will be running at `http://localhost:8000` by default.
 - **Request Body:**
   ```json
   {
-    "title": "Sample Todo",
-    "completed": false
+    "text": "Sample Todo"
   }
   ```
 
@@ -95,7 +94,7 @@ The server will be running at `http://localhost:8000` by default.
 - **Request Body:**
   ```json
   {
-    "title": "Updated Todo",
+    "text": "Updated Todo",
     "completed": true
   }
   ```
