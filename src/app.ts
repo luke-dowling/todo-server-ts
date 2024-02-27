@@ -13,9 +13,11 @@ app.use(express.json());
 app.use(morgan("combined"));
 
 app.get("/", (req: Request, res: Response) => {
+  const { protocol } = req;
+  const url = `${protocol}://${req.get("host")}`;
   res.json({
     routes: {
-      todos: "localhost:8000/todos",
+      todos: `${url}/todos`,
     },
   });
 });
